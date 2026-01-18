@@ -1,0 +1,29 @@
+cat > .gitignore << 'EOF'
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.tfvars
+
+# AWS credentials
+.aws/
+*.pem
+*.key
+
+# Azure
+*.azureauth
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Secrets and sensitive files
+*secret*
+*password*
+*.env
+EOF
