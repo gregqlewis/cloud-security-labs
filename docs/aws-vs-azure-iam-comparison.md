@@ -77,7 +77,7 @@ Both AWS and Azure provide robust identity and access management capabilities, b
 
 ## Implementation Comparison: Security Auditor Role
 
-### What We Built
+### What I Built
 
 Both labs created a security auditor identity with read-only access to security services:
 
@@ -212,14 +212,14 @@ aws sts assume-role \
 
 ### Azure Testing
 
-**What We Learned:**
+**What I Learned:**
 - Role assignments typically takes 5-10 minutes to propagate, occasionally longer
 - Account Owner role overrides read-only restrictions (additive model)
 - Would need dedicated test user to properly validate
 - Azure AD group membership controls access
 
 **Challenge:**
-Testing was complicated by additive permissions - having Owner role meant we couldn't truly test read-only restrictions without creating a separate user.
+Testing was complicated by additive permissions - having Owner role meant I couldn't truly test read-only restrictions without creating a separate user.
 
 ## Service-to-Service Authentication
 
