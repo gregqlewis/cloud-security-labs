@@ -7,9 +7,9 @@ A hands-on portfolio demonstrating cloud security engineering capabilities acros
 This repository documents my transition from SOC operations to Cloud Security Engineering, showcasing practical implementations of security controls, threat detection, and compliance frameworks in cloud environments.
 
 **Author:** Greg Lewis  
-**Current Role:** SOC Analyst
+**Current Role:** SOC Analyst  
 **Target Role:** Cloud Security Engineer  
-**Education:** M.S. Cybersecurity Technology - UMGC
+**Education:** M.S. Cybersecurity Technology - UMGC  
 **Certifications:** Security+ CE  
 **Website:** [gregqlewis.com](https://gregqlewis.com)
 
