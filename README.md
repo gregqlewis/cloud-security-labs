@@ -25,20 +25,53 @@ This repository documents my transition from SOC operations to Cloud Security En
 
 ### AWS Security Labs
 
-| Lab                                               | Focus Area                     | Status        | Key Technologies                   |
-| ------------------------------------------------- | ------------------------------ | ------------- | ---------------------------------- |
-| [00 - Account Baseline](aws/00-account-baseline/) | Initial security configuration | ✅ Complete    | CloudTrail, IAM, Billing           |
-| [01 - IAM Security](aws/01-iam-security/)         | Identity and access management | 🚧 In Progress | IAM, Access Analyzer, Terraform    |
-| 02 - Security Monitoring                          | SIEM and detection             | 📋 Planned     | GuardDuty, EventBridge, CloudWatch |
-| 03 - Network Security                             | VPC security architecture      | 📋 Planned     | VPC, Security Groups, Flow Logs    |
-| 04 - Purple Team Scenarios                        | Cloud attack/defense           | 📋 Planned     | MITRE ATT&CK, Detection Rules      |
+| Lab                                               | Focus Area                     | Status     | Key Technologies                   |
+| ------------------------------------------------- | ------------------------------ | ---------- | ---------------------------------- |
+| [00 - Account Baseline](aws/00-account-baseline/) | Initial security configuration | ✅ Complete | CloudTrail, IAM, Billing           |
+| [01 - IAM Security](aws/01-iam-security/)         | Identity and access management | ✅ Complete | IAM, Access Analyzer, Terraform    |
+| 02 - Security Monitoring                          | SIEM and detection             | 📋 Planned  | GuardDuty, EventBridge, CloudWatch |
+| 03 - Network Security                             | VPC security architecture      | 📋 Planned  | VPC, Security Groups, Flow Logs    |
+| 04 - Purple Team Scenarios                        | Cloud attack/defense           | 📋 Planned  | MITRE ATT&CK, Detection Rules      |
 
 ### Azure Security Labs
 
-| Lab                                         | Focus Area          | Status    | Key Technologies                   |
-| ------------------------------------------- | ------------------- | --------- | ---------------------------------- |
-| [01 - IAM Security](azure/01-iam-security/) | Azure AD and RBAC   | 📋 Planned | Azure AD, PIM, Conditional Access  |
-| 02 - Sentinel SIEM                          | Security monitoring | 📋 Planned | Microsoft Sentinel, KQL, Workbooks |
+| Lab                                                 | Focus Area                     | Status     | Key Technologies                          |
+| --------------------------------------------------- | ------------------------------ | ---------- | ----------------------------------------- |
+| [00 - Account Baseline](azure/00-account-baseline/) | Initial security configuration | ✅ Complete | Activity Logs, Service Principal, Budgets |
+| [01 - IAM Security](azure/01-iam-security/)         | Azure AD and RBAC              | ✅ Complete | Azure AD, RBAC, Terraform                 |
+| 02 - Sentinel SIEM                                  | Security monitoring            | 📋 Planned  | Microsoft Sentinel, KQL, Workbooks        |
+| 03 - Network Security                               | VNet security architecture     | 📋 Planned  | VNet, NSGs, Azure Firewall                |
+| 04 - Purple Team Scenarios                          | Cloud attack/defense           | 📋 Planned  | MITRE ATT&CK, Detection Rules             |
+
+### Cross-Platform Documentation
+
+| Document                                                           | Status     | Description                                            |
+| ------------------------------------------------------------------ | ---------- | ------------------------------------------------------ |
+| [AWS vs Azure IAM Comparison](docs/aws-vs-azure-iam-comparison.md) | ✅ Complete | Architecture, terminology, and implementation patterns |
+
+## Recent Progress
+
+**January 18, 2026:**
+- ✅ Established secure account baselines in both AWS and Azure
+- ✅ Deployed custom least-privilege IAM policies using Terraform
+- ✅ Created Security Auditor role with MFA enforcement (AWS)
+- ✅ Built custom RBAC Security Auditor role (Azure)
+- ✅ Enabled IAM Access Analyzer for privilege detection
+- ✅ Tested role assumption and verified permission controls
+- ✅ Documented comprehensive AWS vs Azure IAM comparison
+- ✅ Implemented Infrastructure as Code for all resources
+
+**Key Achievements:**
+- First production Terraform deployments in both cloud platforms
+- Working IAM implementations with least privilege design
+- Professional documentation with compliance mappings (ISO27001, NIST)
+- Portfolio demonstrates multi-cloud security engineering capability
+
+**Next Steps:**
+- Enable GuardDuty and Microsoft Sentinel for security monitoring
+- Build privilege escalation detection scenarios
+- Create additional custom roles (EC2 Operator, Lambda Developer)
+- Publish first blog post on gregqlewis.com
 
 ## Technical Stack
 
@@ -102,17 +135,35 @@ This portfolio bridges my experience as a SOC Analyst with hands-on cloud securi
 ## Repository Structure
 ```
 cloud-security-labs/
-├── aws/                          # AWS security labs
-│   ├── 00-account-baseline/      # Initial security setup
-│   ├── 01-iam-security/          # IAM deep dive
-│   └── README.md                 # AWS-specific overview
-├── azure/                        # Azure security labs
-│   ├── 01-iam-security/          # Azure AD implementation
-│   └── README.md                 # Azure-specific overview
+├── README.md                     # Portfolio overview (this file)
 ├── docs/                         # Cross-cutting documentation
-│   ├── multi-cloud-comparison.md
-│   └── cost-optimization.md
-└── README.md                     # This file
+│   └── aws-vs-azure-iam-comparison.md  # ✅ Multi-cloud IAM analysis
+├── aws/                          # AWS security labs
+│   ├── README.md                 # ✅ AWS-specific overview
+│   ├── 00-account-baseline/      # ✅ Initial security setup
+│   │   └── README.md
+│   ├── 01-iam-security/          # ✅ IAM deep dive
+│   │   ├── README.md
+│   │   ├── terraform/            # ✅ Working Terraform code
+│   │   ├── policies/
+│   │   ├── docs/
+│   │   └── screenshots/          # ✅ Documentation screenshots
+│   ├── 02-security-monitoring/   # 📋 Planned
+│   ├── 03-network-security/      # 📋 Planned
+│   └── 04-purple-team/           # 📋 Planned
+└── azure/                        # Azure security labs
+    ├── README.md                 # ✅ Azure-specific overview
+    ├── 00-account-baseline/      # ✅ Initial security setup
+    │   └── README.md
+    ├── 01-iam-security/          # ✅ Azure AD & RBAC
+    │   ├── README.md
+    │   ├── terraform/            # ✅ Working Terraform code
+    │   ├── roles/
+    │   ├── docs/
+    │   └── screenshots/          # ✅ Documentation screenshots
+    ├── 02-sentinel-monitoring/   # 📋 Planned
+    ├── 03-network-security/      # 📋 Planned
+    └── 04-purple-team/           # 📋 Planned
 ```
 
 ## Getting Started
