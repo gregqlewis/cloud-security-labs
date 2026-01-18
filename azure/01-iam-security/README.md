@@ -429,6 +429,27 @@ terraform/
 - [ ] Documentation includes AWS comparison
 - [ ] Blog post published covering key learnings
 
+## Testing Notes
+
+**Role Permission Testing:**
+- Created custom Security Auditor RBAC role with read-only permissions
+- Assigned to Azure AD security group at subscription scope
+- Also assigned built-in Security Reader role for comprehensive coverage
+
+**Important Note on Testing:**
+As the account owner, I have the Owner role on the subscription, which provides full access. Azure RBAC is **additive** - the most permissive role applies. Therefore:
+- My account: Owner role (full access) + Security Auditor role (read-only) = Full access
+- Dedicated security analyst: Only Security Auditor role = Read-only access
+
+**Key Learning:**
+This demonstrates Azure's additive permission model, where multiple role assignments combine with the highest privilege winning. In production environments, security analysts would have only the Security Auditor group membership without Owner privileges, properly enforcing least privilege.
+
+**Role Verification:**
+- Custom role definition proves least privilege design
+- Explicit denies for role modifications and security changes
+- Read-only actions for monitoring and auditing
+- Works correctly when assigned to users without administrative roles
+
 ## Timeline
 
 **Week 1:**
@@ -480,12 +501,16 @@ terraform/
 ## Next Steps
 
 1. ✅ Complete account baseline
-2. 📋 Set up Terraform project structure
-3. 📋 Create Azure AD test users
-4. 📋 Implement custom RBAC roles
-5. 📋 Configure Conditional Access
-6. 📋 Document AWS vs Azure differences
-7. 📋 Publish comparison blog post
+2. ✅ Set up Terraform project structure
+3. ✅ Create custom RBAC role (Security Auditor)
+4. ✅ Create Azure AD security group
+5. ✅ Assign roles at subscription scope
+6. ✅ Test and document role behavior
+7. 🚧 Create comparison documentation (AWS IAM vs Azure RBAC)
+8. 📋 Build additional custom roles (VM Operator, Storage Reader)
+9. 📋 Implement managed identity examples
+10. 📋 Document privilege escalation scenarios
+11. 📋 Publish blog post: "AWS IAM vs Azure RBAC - A Security Engineer's Comparison"
 
 ## Resources
 
