@@ -138,6 +138,54 @@ resource "aws_iam_policy" "security_auditor" {
 }
 
 # ============================================================================
+# IAM Role: Security Auditor (uses the custom policy above)
+# ============================================================================
+
+# Trust policy - who can assume this role
+data "aws_iam_policy_document" "security_auditor_assume_role" {
+  statement {
+    sid     = "AllowAssumeRole"
+    effect  = "Allow"
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "AWS"
+      identifiers = [data.aws_caller_identity.current.account_id]
+    }
+
+    condition {
+      test     = "Bool"
+      variable = "aws:MultiFactorAuthPresent"
+      values   = ["true"]
+    }
+  }
+}
+
+resource "aws_iam_role" "security_auditor" {
+  name               = "${var.project_name}-security-auditor-role"
+  description        = "Security auditor role with read-only access to security services, requires MFA"
+  assume_role_policy = data.aws_iam_policy_document.security_auditor_assume_role.json
+
+  tags = {
+    Name        = "${var.project_name}-security-auditor-role"
+    Description = "Read-only security auditing role"
+    MFARequired = "true"
+  }
+}
+
+# Attach our custom policy to the role
+resource "aws_iam_role_policy_attachment" "security_auditor_custom" {
+  role       = aws_iam_role.security_auditor.name
+  policy_arn = aws_iam_policy.security_auditor.arn
+}
+
+# Also attach AWS managed SecurityAudit policy for additional read permissions
+resource "aws_iam_role_policy_attachment" "security_auditor_aws_managed" {
+  role       = aws_iam_role.security_auditor.name
+  policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
+}
+
+# ============================================================================
 # Outputs
 # ============================================================================
 
