@@ -367,10 +367,15 @@ terraform/
 ## Next Steps
 
 1. ✅ Set up Terraform project structure
-2. 🚧 Create first custom IAM policy
-3. 📋 Enable IAM Access Analyzer
-4. 📋 Build detection rules for privilege escalation
-5. 📋 Document findings and lessons learned
+2. ✅ Create first custom IAM policy (Security Auditor)
+3. ✅ Enable IAM Access Analyzer
+4. 🚧 Create IAM role using the security auditor policy
+5. 📋 Test role permissions and document behavior
+6. 📋 Build detection rules for privilege escalation
+7. 📋 Create additional custom policies (VM Operator, Lambda Developer)
+8. 📋 Implement cross-account role assumption example
+9. 📋 Document findings and lessons learned
+10. 📋 Publish blog post: "Building Least-Privilege IAM Policies with Terraform"
 
 ## Resources
 
