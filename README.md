@@ -121,7 +121,7 @@ Target monthly spend: $0-10
 This portfolio bridges my experience as a SOC Analyst with hands-on cloud security engineering skills:
 
 **Current Expertise:**
-- 4+ years cybersecurity experience supporting federal defense contracts
+- 4+ years cybersecurity experience supporting federal contracts
 - Threat hunting and incident response in AWS environments
 - Enterprise security tools: Splunk, CrowdStrike, Tenable, Zscaler
 - ISO27001:2022 compliance leadership
