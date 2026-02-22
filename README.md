@@ -182,7 +182,7 @@ az login
 terraform --version
 
 # Clone repository
-git clone https://github.com/YOUR-USERNAME/cloud-security-labs.git
+git clone https://github.com/gregqlewis/cloud-security-labs.git
 cd cloud-security-labs
 ```
 
