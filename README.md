@@ -212,4 +212,4 @@ Detailed writeups and lessons learned published at [gregqlewis.com](https://greg
 
 *Building in public - documenting my transition from SOC operations to Cloud Security Engineering*
 
-**Last Updated:** January 2026
+**Last Updated:** February 2026
