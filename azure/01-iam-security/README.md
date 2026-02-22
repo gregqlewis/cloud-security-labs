@@ -506,8 +506,8 @@ This demonstrates Azure's additive permission model, where multiple role assignm
 4. ✅ Create Azure AD security group
 5. ✅ Assign roles at subscription scope
 6. ✅ Test and document role behavior
-7. 🚧 Create comparison documentation (AWS IAM vs Azure RBAC)
-8. 📋 Build additional custom roles (VM Operator, Storage Reader)
+7. ✅ Create comparison documentation (AWS IAM vs Azure RBAC)
+8. 🚧 Build additional custom roles (VM Operator, Storage Reader)
 9. 📋 Implement managed identity examples
 10. 📋 Document privilege escalation scenarios
 11. 📋 Publish blog post: "AWS IAM vs Azure RBAC - A Security Engineer's Comparison"
